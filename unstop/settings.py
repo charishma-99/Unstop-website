@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'accounts',
+    'courses',
 
     'crispy_forms',
     "crispy_bootstrap5",
