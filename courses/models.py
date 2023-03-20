@@ -36,7 +36,13 @@ class Section(models.Model):
 
 
 class Course(models.Model):
+    COURSE_TYPE = (
+        ('Self Paced Courses', 'Self Paced Courses'),
+        ('Live Coherts', 'Live Coherts'),
+    )
+
     name = models.CharField(max_length=255)
+    type = models.CharField(max_length=20, choices=COURSE_TYPE)
     langauge = models.CharField(max_length=255)
     intro_video = models.FileField(upload_to='intro_video/')
     about = models.TextField()
@@ -44,7 +50,7 @@ class Course(models.Model):
     course_highlight = models.TextField()
     section = models.ManyToManyField(Section, related_name="sections")
     price = models.FloatField(default=0)
-    career_grouth_prospect = models.TextField()
+    career_growth_prospect = models.TextField()
     instructor = models.ManyToManyField(Instructor, related_name="instructors")
     date_created = models.DateTimeField(default=timezone.now)
 
