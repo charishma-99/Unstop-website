@@ -6,19 +6,19 @@ class InstructorForm(forms.ModelForm):
 
     class Meta:
         model = Instructor
-        fields = ('__all__')
+        fields = ('name', 'headline', 'about')
 
 
 class Course_ContentForm(forms.ModelForm):
     class Meta:
         model = Course_Content
-        fields = ('__all__')
+        fields = ('name','section','course','file')
 
 
 class SectionForm(forms.ModelForm):
     class Meta:
         model = Section
-        fields = ('__all__')
+        fields = ('name','course_content','course')
 
 
 class CourseForm(forms.Modelform):

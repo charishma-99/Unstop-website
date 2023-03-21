@@ -16,6 +16,7 @@ class Instructor(models.Model):
 
 
 class Course_Content(models.Model):
+    instructor = models.ForeignKey(Instructor, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=250)
     section = models.CharField(max_length=250)
     course = models.CharField(max_length=250)
@@ -26,6 +27,7 @@ class Course_Content(models.Model):
 
 
 class Section(models.Model):
+    instructor = models.ManyToManyField(Instructor)
     name = models.CharField(max_length=255)
     course_content = models.ManyToManyField(
         Course_Content, related_name="course_contents")
