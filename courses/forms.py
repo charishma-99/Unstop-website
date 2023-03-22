@@ -21,7 +21,7 @@ class SectionForm(forms.ModelForm):
         fields = ('name','course_content','course')
 
 
-class CourseForm(forms.Modelform):
+class CourseForm(forms.ModelForm):
     class Meta:
         model = Course
         fields = ('name', 'type', 'language',
