@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unstop Website">
+    <title>Unstop: Connecting Talents, Colleges, Recruiters</title>
+    
+    <link rel="shortcut icon" href="{% static 'img/unstop-logo.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    <div class="super_container">
+
+        <!-- Header -->
+    
+        <header class="header">
+                
+        
+            <!-- Header Content -->
+            <div class="header_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                                <div class="logo_container mr-auto">
+                                    <a href="#">
+                                        <img src="{% static 'img/logo.png' %}" alt="" srcset="" width="80">
+                                        <!-- <div class="logo_text">Unstop</div> -->
+                                    </a>
+                                </div>
+                                <nav class="main_nav_contaner">
+                                    <ul class="main_nav">
+                                        <li> <a href="">Learn</a></li>
+                                        <li><a href="">Practice</a></li>
+                                        <li><a href="">Complete</a></li>
+                                        <li><a href="#">Mentorship</a></li>
+                                        <li><a href="">Jobs</a></li>
+                                        <li><a href="">Host</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="header_content_right ml-auto text-right">
+                                    <div class="header_search">
+                                        <div class="search_form_container">
+                                            <form action="#" id="search_form" class="search_form trans_400">
+                                                <input type="search" class="header_search_input trans_400" placeholder="Search Opportunities" required="required">
+                                                <div class="search_button">
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Hamburger -->
+    
+                                    <div class="user"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></div>
+                                    <div class="hamburger menu_mm">
+                                        <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </header>
+    
+        <!-- Menu -->
+    
+        <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+            <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+            <div class="search">
+                <form action="#" class="header_search_form menu_mm">
+                    <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+                    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                        <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <nav class="menu_nav">
+                <ul class="menu_mm">
+                    <li class="menu_mm"><a href="">Learn</a></li>
+                    <li><a href="">Practice</a></li>
+                    <li><a href="">Complete</a></li>
+                    <li><a href="#">Mentorship</a></li>
+                    <li><a href="">Jobs</a></li>
+                    <li><a href="">Host</a></li>
+                </ul>
+            </nav>
+          
+        </div>
+        
+        <!-- Home -->
+    
+        <div class="home">
+            <div class="home_background"></div>
+            <div class="home_content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <h1 class="home_title">Connecting <br> Talent, Colleges, <br> Recruiters</h1>
+                            <hr>
+                            <p class="home_title"> Explore opportunities from across the globe to learn, <br> showcase skills, gain CV points, & get hired by your <br>dream company.</p>
+                        </div>
+                    
+                        <div class="col-md-6 ">
+                            
+                            <div class="card-deck">
+                      
+                                <div class="card">
+                                    <img class="card-img-top" src="{% static 'img/learn.png' %}" alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Learn</h5>
+                                    </div>
+                                </div>
+                             
+                                <div class="card">
+                                    <img class="card-img-top" src="{% static 'img/practice.png' %}" alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">                                        
+                                        <h5 class="card-title">Practice</h5>
+                                    </div>
+                                </div>
+                         
+                                    <div class="card">
+                                    <img class="card-img-top" src="{% static 'img/mentorship.png' %}" alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">   
+                                         <h5 class="card-title">Mentorship</h5>
+                                        </div>
+                                    </div>
+                                             
+                            </div>
+                            <br>
+                            <div class="card-deck">
+                      
+                                <div class="card">
+                                    <img class="card-img-top" src="{% static 'img/learn.png' %}" alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Learn</h5>
+                                    </div>
+                                </div>
+                             
+                                <div class="card">
+                                    <img class="card-img-top" src="{% static 'img/practice.png' %}" alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">                                        
+                                        <h5 class="card-title">Practice</h5>
+                                    </div>
+                                </div>
+                         
+                                    <div class="card">
+                                    <img class="card-img-top" src="{% static 'img/mentorship.png' %}" alt="Card image" style="width:100%">
+                                    <div class="card-img-overlay">   
+                                         <h5 class="card-title">Mentorship</h5>
+                                        </div>
+                                    </div>
+                                             
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+    
+       
+    </div>
+</body>
+</html>
