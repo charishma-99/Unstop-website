@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'base',
     'courses',
+    'jobs',
 
     'crispy_forms',
     "crispy_bootstrap5",

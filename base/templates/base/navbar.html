@@ -1,0 +1,72 @@
+{% load static %}
+<nav>
+    <div class="navbar container">
+        <div class="nav-left">
+            <div class="nav-img">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/logo.png' %}" alt="logo" />
+                </a>
+                <span>Formerly<br /><strong>Dare2Compete</strong></span>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search Opportunities" />
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="nav-tabs">
+                <div class="learn-tab">
+                    <a href="">
+                        <span class="tab-icon"></span>
+                        <span class="tab-name">learn</span>
+                    </a>
+                </div>
+                <div class="practice-tab">
+                    <a href="">
+                        <span class="tab-icon"></span>
+                        <span class="tab-name">practice</span>
+                    </a>
+                </div>
+                <div class="compete-tab">
+                    <a href="">
+                        <span class="tab-icon"></span>
+                        <span class="tab-name">compete</span>
+                    </a>
+                </div>
+                <div class="mentorship-tab">
+                    <a href="">
+                        <span class="tab-icon"></span>
+                        <span class="tab-name">mentorship</span>
+                    </a>
+                </div>
+                <div class="jobs-tab">
+                    <a href="{% url 'job_portal' %}">
+                        <span class="tab-icon"></span>
+                        <span class="tab-name">jobs</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-btns">
+                <button class="btn host-btn">
+
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.87806 3.11794L6.87806 12.6856C6.87785 12.9825 6.77287 13.2697 6.58163 13.4968C6.39039 13.7238 6.12516 13.8761 5.83265 13.9268C5.54015 13.9775 5.23914 13.9233 4.98267 13.7738C4.72619 13.6243 4.5307 13.3891 4.43063 13.1096L2.89285 8.70468M2.89285 8.70468C2.28491 8.4462 1.78494 7.98633 1.47756 7.40159C1.17018 6.81685 1.07426 6.14387 1.20603 5.49653C1.33781 4.8492 1.68919 4.26727 2.2007 3.84923C2.71221 3.43119 3.35245 3.20271 4.01306 3.20246L5.32523 3.20246C8.26185 3.20246 10.7866 2.31861 11.8918 1.05371V11.0812C10.7866 9.8163 8.26257 8.93245 5.32523 8.93245H4.01306C3.62817 8.93301 3.24714 8.85507 2.89285 8.70468ZM11.8918 8.2162C12.4617 8.2162 13.0082 7.98982 13.4112 7.58685C13.8142 7.18388 14.0405 6.63734 14.0405 6.06745C14.0405 5.49757 13.8142 4.95103 13.4112 4.54806C13.0082 4.14509 12.4617 3.91871 11.8918 3.91871"
+                            stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M11.9914 8.13297L11.8736 3.9374C12.6003 4.14523 14.0591 4.88152 14.0807 6.164C14.1023 7.44649 12.6968 8.01101 11.9914 8.13297Z"
+                            fill="white" />
+                    </svg>
+
+                    <span>Host</span>
+                </button>
+                <button class="btn login-btn">
+                    <span>Login</span>
+                    <img src="{% static 'img/login_icon.svg' %} " alt="host btn" />
+                </button>
+                <button class="menu-btn">
+                    <img src="{% static 'img/hamburger_icon.svg' %} " alt="menu" />
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
