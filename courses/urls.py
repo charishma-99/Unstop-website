@@ -6,5 +6,5 @@ urlpatterns = [
     path('add-section/', views.add_section, name="add_section"),
     path('add-course/', views.add_course, name="add_course"),
     path('', views.learn, name="learn"),
-    path('course-detail/<slug:slug>', views.course_detail, name="course_detail"),
+    path('detail/<slug:slug>', views.course_detail, name="course_detail"),
 ]

@@ -1,0 +1,82 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} {{course.name }} | Unstop {% endblock  %}
+
+{% block style %}
+<style>
+    .jumbotron, .breadcrumb{
+        background-size: cover;
+        background: linear-gradient(rgba(0,0,250,0.25), rgba(125,250,250,0.25)),
+        url("{% static 'img/course_individual_bg.png' %} ");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white !important;
+
+    }
+    .about-body{
+        text-align: justify;
+    }
+    
+    .card {
+        border: 0;
+    }
+</style>
+{% endblock style %}
+
+
+
+{% block main %}
+
+<div class="jumbotron jumbotron-fluid course-jumbo" >
+    <div class="container"> 
+    <div aria-label="breadcrumb" class"breadcrumb"> 
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'learn' %}">Courses</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{course.name}}</li>
+        </ol>
+    </div>
+    <h1>{{course.name}}</h1>
+   </div>
+</div>
+
+<div class="container row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">About</h6>
+                <p class="card-text about-body">{{course.about}}</p>
+            </div>
+        </div>
+        <p></p>
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Course Highlights</h6>
+                <p class="card-text about-body">{{course.about}}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <video src="{{course.intro_video.url}} " class="card-img-top" type="video/mp4" controls
+            preload = "auto"></video>
+            <!-- <img src="{{course.course_cover.url}}" alt="" class="card-img-top"> -->
+            <div class="card-body">
+                <h6>Program Cost:            ₹{{course.price}}</h6>
+                <a href="" class="btn btn-warning btn-lg btn-block">Enroll Now</a>
+                
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">English</li>
+                    <li class="list-group-item">Mobile Friendly</li>
+                    <li class="list-group-item">Industry-recognized Certificate</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock main %}
+
+

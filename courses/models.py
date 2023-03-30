@@ -15,6 +15,7 @@ def create_slug(title):
 
 class Instructor(models.Model):
     user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
+    profile_photo = models.ImageField(upload_to='instructor_profile/', null=True, blank=True)
     name = models.CharField(max_length=150)
     headline = models.CharField(max_length=150)
     about = models.TextField()

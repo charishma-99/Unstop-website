@@ -151,10 +151,11 @@ Unstop Courses: Learn Anything, Anywhere From The Best
                 <h4 id="list-item-1">Most Popular</h4>
                 <div class="row"> 
                     {% for course in self_paced %}
-                    <div class="card col" style="height: 20rem;">
+                    
+                    <div class="card col" >
                         <img src="{{course.course_cover.url}}" alt="" class="card-img-top">
                         <div class="card-body"> 
-                            <h6 class="card-title">{{course.name}}</h6>
+                            <a href="{% url 'course_detail' course.slug%}"> <h6 class="card-title">{{course.name}}</h6> </a>
                             <small class="card-text">Duration of the course - {{course.duration}}</small><br>
                             <small class="card-text">5+ Immersive Hands on Project</small><br>
                             <small class="card-text">Unique Industry-Led Content</small><br>
