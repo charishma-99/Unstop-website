@@ -1,9 +1,17 @@
 from django.db import models
 from accounts.models import UserProfile
 from django.utils import timezone
-
+from django.template.defaultfilters import slugify
 # Create your models here.
 
+
+def create_slug(title):
+    slug = slugify(title)
+    qs = Course.objects.filter(slug=slug)
+    exists = qs.exists()
+    if exists:
+        slug = "%s-%s" %(slug, qs.first().id)
+    return slug
 
 class Instructor(models.Model):
     user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
@@ -42,8 +50,9 @@ class Course(models.Model):
         ('Self Paced Courses', 'Self Paced Courses'),
         ('Live Coherts', 'Live Coherts'),
     )
-
+    course_cover = models.ImageField( upload_to='course_cover/', blank=True, null=True)
     name = models.CharField(max_length=255)
+    slug = models.SlugField(null=True, blank=True, unique=True)
     type = models.CharField(max_length=20, choices=COURSE_TYPE)
     langauge = models.CharField(max_length=255)
     intro_video = models.FileField(upload_to='intro_video/')
@@ -59,3 +68,8 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = create_slug(self.name)
+        return super().save(*args, **kwargs)

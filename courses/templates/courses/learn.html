@@ -150,75 +150,23 @@ Unstop Courses: Learn Anything, Anywhere From The Best
               <div class="scrollspy-example col-md-9" data-spy="scroll" data-target="#list-example" data-offset="0">
                 <h4 id="list-item-1">Most Popular</h4>
                 <div class="row"> 
+                    {% for course in self_paced %}
                     <div class="card col" style="height: 20rem;">
-                        <img src="{% static 'img/641d251b1def3_One-Week-of-Data-Science-in-Python-banner-_1_-2.jpg' %}" alt="" class="card-img-top">
+                        <img src="{{course.course_cover.url}}" alt="" class="card-img-top">
                         <div class="card-body"> 
-                            <h6 class="card-title">Python for Data Science</h6>
-                            <small class="card-text">Duration of the course - 25 hours | 5 weeks</small><br>
+                            <h6 class="card-title">{{course.name}}</h6>
+                            <small class="card-text">Duration of the course - {{course.duration}}</small><br>
                             <small class="card-text">5+ Immersive Hands on Project</small><br>
                             <small class="card-text">Unique Industry-Led Content</small><br>
                             <small class="card-text">Industry Recognized Certificate</small><br>
                             
                         </div>
                     </div>
-                      <div class="card col" style="height: 20rem;">
-                        <img src="{% static 'img/641d247ad9e57_Excel_Course-banner-2-2.jpg' %}" alt="" class="card-img-top">
-                        <div class="card-body"> 
-                            <h6 class="card-title">Ms Excel</h6>
-                            <small class="card-text">Duration of the course - 20 hours | 4 weeks</small><br>
-                            <small class="card-text">10+ Practical Hands-On Exercises and Assignments</small><br>
-                            <small class="card-text">Case Study-Based Learning</small><br>
-                            <small class="card-text">Doubt-Clearing</small><br>
-                        </div>
-                    </div>
-                    <div class="card col" style="height: 20rem;">
-                        <img src="{% static 'img/641d251b1def3_One-Week-of-Data-Science-in-Python-banner-_1_-2.jpg' %}" alt="" class="card-img-top">
-                        <div class="card-body"> 
-                            <h6 class="card-title">Aptitude for Placements</h6>
-                            <small class="card-text">500+ Questions for Practice</small><br>
-                            <small class="card-text">Duration of the course - 30 hours | 6 weeks</small><br>
-                            <small class="card-text">Unique Industry-Led Content</small><br>
-                            <small class="card-text">Industry Recognized Certificate</small><br>
-                            
-                        </div>
-                    </div>
+                    {% endfor %} 
+                    
                 </div>
-                <br>
-                <div class="row"> 
-                    <div class="card col" style="height: 20rem;">
-                        <img src="{% static 'img/641d251b1def3_One-Week-of-Data-Science-in-Python-banner-_1_-2.jpg' %}" alt="" class="card-img-top">
-                        <div class="card-body"> 
-                            <h6 class="card-title">Python for Data Science</h6>
-                            <small class="card-text">Duration of the course - 25 hours | 5 weeks</small><br>
-                            <small class="card-text">5+ Immersive Hands on Project</small><br>
-                            <small class="card-text">Unique Industry-Led Content</small><br>
-                            <small class="card-text">Industry Recognized Certificate</small><br>
-                            
-                        </div>
-                    </div>
-                    <br>
-                      <div class="card col" style="height: 20rem;">
-                        <img src="{% static 'img/641d247ad9e57_Excel_Course-banner-2-2.jpg' %}" alt="" class="card-img-top">
-                        <div class="card-body"> 
-                            <h6 class="card-title">Ms Excel</h6>
-                            <small class="card-text">Duration of the course - 20 hours | 4 weeks</small><br>
-                            <small class="card-text">10+ Practical Hands-On Exercises and Assignments</small><br>
-                            <small class="card-text">Case Study-Based Learning</small><br>
-                            <small class="card-text">Doubt-Clearing</small><br>
-                        </div>
-                    </div>
-                    <div class="card col" style="height: 20rem;">
-                        <img src="{% static 'img/641d251b1def3_One-Week-of-Data-Science-in-Python-banner-_1_-2.jpg' %}" alt="" class="card-img-top">
-                        <div class="card-body"> 
-                            <h6 class="card-title">Aptitude for Placements</h6>
-                            <small class="card-text">500+ Questions for Practice</small><br>
-                            <small class="card-text">Duration of the course - 30 hours | 6 weeks</small><br>
-                            <small class="card-text">Unique Industry-Led Content</small><br>
-                            <small class="card-text">Industry Recognized Certificate</small><br>
-                            
-                        </div>
-                    </div>
-                </div>
+                
+                
                  
             </div>
         

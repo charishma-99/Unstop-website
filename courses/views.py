@@ -53,7 +53,7 @@ def add_course(request):
 
 
 def learn(request):
-    self_paced = Course.objects.filter(type='Self Paced Courses').all()
+    self_paced = Course.objects.filter(type='Self Paced Courses').all()[0:6]
     live_coherts = Course.objects.filter(type='Live Coherts').all()
     context = {
         'self_paced': self_paced,
@@ -62,6 +62,6 @@ def learn(request):
     return render(request, 'courses/learn.html', context)
 
 
-def course_detail(request, id):
-    course = Course.objects.filter(id=id).first()
+def course_detail(request, slug):
+    course = Course.objects.filter(slug=slug).first()
     return render(request, 'courses/course_detail.html', {'course':course})
