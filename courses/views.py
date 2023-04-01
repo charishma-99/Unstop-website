@@ -64,4 +64,11 @@ def learn(request):
 
 def course_detail(request, slug):
     course = Course.objects.filter(slug=slug).first()
-    return render(request, 'courses/course_detail.html', {'course':course})
+    section = course.section.all()
+    instructor = course.instructor.all()
+    print(instructor)
+    for sec in section:
+        course_content = Course_Content.objects.filter(section=sec.name)
+        # print(sec.name)
+        # print(course_content)
+    return render(request, 'courses/course_detail.html', {'course': course, 'sections': section, 'course_content': course_content, 'instructors': instructor})
