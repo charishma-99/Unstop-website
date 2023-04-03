@@ -47,13 +47,13 @@
                         </a>
                     </div>
                     <div class="practice-tab">
-                        <a href="">
+                        <a href="{% url 'practice' %}">
                             <span class="tab-icon"></span>
                             <span class="tab-name">practice</span>
                         </a>
                     </div>
                     <div class="compete-tab">
-                        <a href="">
+                        <a href="{% url 'practice' %}">
                             <span class="tab-icon"></span>
                             <span class="tab-name">compete</span>
                         </a>
@@ -85,10 +85,10 @@
 
                         <span>Host</span>
                     </button>
-                    <button class="btn login-btn">
+                    <a class="btn login-btn" href="{% url 'login' %}">
                         <span>Login</span>
                         <img src="{% static 'img/login_icon.svg' %} " alt="host btn" />
-                    </button>
+                    </a>
                     <button class="menu-btn">
                         <img src="{% static 'img/hamburger_icon.svg' %} " alt="menu" />
                     </button>
