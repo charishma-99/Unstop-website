@@ -71,4 +71,8 @@ def course_detail(request, slug):
         course_content = Course_Content.objects.filter(section=sec.name)
         # print(sec.name)
         # print(course_content)
-    return render(request, 'courses/course_detail.html', {'course': course, 'sections': section, 'course_content': course_content, 'instructors': instructor})
+    return render(request, 'courses/course_detail.html', 
+                  {'course': course, 
+                   'sections': section, 
+                   'course_content': course_content, 
+                   'instructors': instructor})

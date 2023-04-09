@@ -112,10 +112,10 @@ class Profile(models.Model):
     instagram = models.URLField(null=True, blank=True, max_length=200)
     twitter = models.URLField(null=True, blank=True, max_length=200)
     github = models.URLField(null=True, blank=True, max_length=200)
-    work_experience = models.CharField(max_length=50)
-    skill = models.ManyToManyField(Skill)
-    education = models.ManyToManyField(Education)
-    work_history = models.ManyToManyField(Work_Experience)
+    work_experience = models.CharField(max_length=50, null=True, blank=True)
+    skill = models.ManyToManyField(Skill, null=True, blank=True)
+    education = models.ManyToManyField(Education, null=True, blank=True)
+    work_history = models.ManyToManyField(Work_Experience, null=True, blank=True)
 
     def __str__(self):
-        return self.user
+        return f"{self.user}"

@@ -9,7 +9,7 @@
     
     <title> 
         {% block title %}
-        Unstop
+        {{object.user.first_name}} {{object.user.last_name}} - Unstop
         {% endblock title %} 
     </title>
     <link rel="shortcut icon" href="{% static 'img/unstop-logo.svg' %}" type="image/x-icon">
@@ -105,11 +105,130 @@
         </div>
     </nav>
 
+
+    {% block sidebar  %}
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+  
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-heading">For Users</li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="">
+            <i class="bi bi-grid"></i>
+            <span>Registration/Applications</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Unstop Awards Nominations</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Watchlist</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Recently Viewed</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Mentor Session</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Courses</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Certificates</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Coupons and Rewards</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Settings</span>
+            </a>
+          </li>
+  
+        <li class="nav-heading">For Organizers</li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Manage Listing</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>My Festivals</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="">
+              <i class="bi bi-grid"></i>
+              <span>Plans & Billing</span>
+            </a>
+          </li>
+
+          <li class="nav-heading">For Mentors</li>
+
+          <li class="nav-item">
+              <a class="nav-link " href="">
+                <i class="bi bi-grid"></i>
+                <span>My Dashboard</span>
+              </a>
+            </li>
+  
+            
+        
+      
+  
+  
+       
+
+  
+  
+      </ul>
+  
+    </aside><!-- End Sidebar-->
+  
+  
+    {% endblock sidebar  %}
+  
 {% block main %}
 
 {% endblock main %}
 
-<footer>
+{% comment %} <footer>
     <div class="footer">
       <div class="footer-top">
         <div class="footer-top-left">
@@ -509,7 +628,9 @@
   </div>
 
 
-<script src="{% static 'js/jquery-3.2.1.min.js' %} "></script>
+</footer> {% endcomment %}
+
+  <script src="{% static 'js/jquery-3.2.1.min.js' %} "></script>
 <script src="{% static 'js/popper.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
