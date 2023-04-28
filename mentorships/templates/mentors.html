@@ -4,6 +4,11 @@
 Find A Mentor: Gain Insights From Experts & Reach Your Goals 
 {% endblock title %} 
 {% block main %}
-    <h1>MENTORS</h1>
-    {{ mentors }}
+    <h1>Top Mentors</h1>
+    <p>Looking for the best of the best? Here're the top-rated mentors by the learners community</p>
+    {% for mentor in mentors %}
+        {{ mentor }} <br>
+        {{ mentor.headline}} <br>
+        {{ mentor.about}}
+    {% endfor %}
 {% endblock main %}

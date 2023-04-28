@@ -19,7 +19,7 @@ class Mentor(models.Model):
     mentor_type = models.CharField(max_length=100, choices=MENTOR_TYPE, null=True)
 
     def __str__(self):
-        return f"{self.headline}"
+        return f"{self.profile_photo} -{self.headline}"
 
 # class Mentee(models.Model):
 #     user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
