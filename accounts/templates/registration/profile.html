@@ -87,7 +87,7 @@
                       
                     </button>
                     {% if user.is_authenticated %}
-                    <a class="btn login-btn" href="{% url 'profile_page' user.profile.id%}">
+                    <a class="btn login-btn" href="{% url 'profile_page' user.profile.id %}">
                         <span>Profile</span>
                         <img src="{% static 'img/login_icon.svg' %} " alt="host btn" />
                     </a>

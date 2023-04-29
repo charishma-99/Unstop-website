@@ -2,10 +2,14 @@ from django.db import models
 from accounts.models import UserProfile
 
 # Create your models here.
+
+
 class Mentor(models.Model):
     MENTOR_TYPE = [
-        ('technology', 'Technology'),
-        ('management', 'Management'),
+        # ('technology', 'Technology'),
+        # ('management', 'Management'),
+        {id:'1' , type: 'technology'},
+        {id:'2' , type: 'management'},
     ]
     user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
     profile_photo = models.ImageField(upload_to='profile_photo/', null=True, blank=True)
