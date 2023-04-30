@@ -1,14 +1,26 @@
 {% extends 'base/base.html' %}
 {% load static %}
 {% block title %}
-Find A Mentor: Gain Insights From Experts & Reach Your Goals 
-{% endblock title %} 
+Find A Mentor: Gain Insights From Experts & Reach Your Goals
+{% endblock title %}
 {% block main %}
-    <h1>Top Mentors</h1>
-    <p>Looking for the best of the best? Here're the top-rated mentors by the learners community</p>
-    {% for mentor in mentors %}
-        {{ mentor }} <br>
-        {{ mentor.headline}} <br>
-        {{ mentor.about}}
-    {% endfor %}
+<h1>Top Mentors</h1>
+<p>Looking for the best of the best? Here're the top-rated mentors by the learners community</p>
+<br>
+<div class="container">
+    <h1><a href="/mentorships/mentors/?id=1">TECHNOLOGY</a></h1>
+    <h1><a href="/mentorships/mentors/?id=2">MANAGEMENT</a></h1>
+    <h1><a href="/mentorships/mentors/?id=3">GENERAL</a></h1>
+</div>
+{% for mentor in mentors %}
+<div class="card" style="width: 15rem">
+    <img src="/media/{{mentor.profile_photo}}" class="card-img-top" style="height: 12rem;" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{mentor.headline}}</h5>
+        <p class="card-text">{{ mentor.about }}</p>
+        {% comment %} <a href="#" class="btn btn-primary">{{ mentor.mentor_type }}</a> {% endcomment %}
+    </div>
+</div>
+<br>
+{% endfor %}
 {% endblock main %}
