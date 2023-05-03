@@ -60,6 +60,7 @@ coverage.xml
 local_settings.py
 
 db.sqlite3-journal
+db.sqlite3
 
 # Flask stuff:
 instance/
@@ -127,3 +128,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+
+
