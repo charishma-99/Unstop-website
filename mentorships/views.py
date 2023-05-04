@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Mentor
-from .forms import SectionForm
+from .forms import SectionForm, MentorContentForm
 from accounts.views import ShowProfile
 
 # Create your views here.
@@ -44,3 +44,18 @@ def add_section(request):
         form = SectionForm()
    
     return render(request, 'add_section.html', {"form": form})
+
+def add_mentor_content(request):
+    new_mentor_content = None
+    if request.method == 'POST':
+        form = MentorContentForm()
+        if form.is_valid:
+            new_mentor_content = form.save
+            new_mentor_content.mentor = request.user.mentor
+            new_mentor_content.save()
+            redirect('home')
+
+    else:
+        form = MentorContentForm()
+
+    return render(request, 'mentor_content.html', {'form': form})
