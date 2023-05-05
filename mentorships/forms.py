@@ -1,5 +1,5 @@
 from django import forms
-from .models import Section, Mentor, MentorContent
+from .models import Section, Mentor, MentorContent, MentoringSession
 
 class SectionForm(forms.ModelForm):
 
@@ -16,5 +16,11 @@ class MentorContentForm(forms.ModelForm):
     class Meta:
         model = MentorContent
         fields = ('mentor', 'name', 'section', 'file')
+
+class MentoringSessionForm(forms.ModelForm):
+    class Meta:
+        model = MentoringSession
+        fields = ('mentor', 'price', 'date', 'location')
+        
 
 
