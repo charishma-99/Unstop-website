@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Mentor
+from .forms import SectionForm, MentorContentForm, MentoringSessionForm
 from accounts.views import ShowProfile
 
 # Create your views here.
@@ -27,3 +28,48 @@ def mentors(request):
 
     }
     return render(request, 'mentors.html', context)
+
+def add_section(request):
+    
+    if request.method == "POST":
+        form = SectionForm(request.POST)
+
+        if form.is_valid():
+            new_section = form.save(commit=False)
+            new_section.mentor = request.user.mentor
+            new_section.save()
+            redirect('home')
+    
+    else:
+        form = SectionForm()
+   
+    return render(request, 'add_section.html', {"form": form})
+
+def add_mentor_content(request):
+    new_mentor_content = None
+    if request.method == 'POST':
+        form = MentorContentForm()
+        if form.is_valid:
+            new_mentor_content = form.save()
+            new_mentor_content.mentor = request.user.mentor
+            new_mentor_content.save()
+            redirect('home')
+
+    else:
+        form = MentorContentForm()
+
+    return render(request, 'mentor_content.html', {'form': form})
+
+def add_mentoring_session(request):
+    if request.method == 'POST':
+        form = MentoringSessionForm()
+        if form.is_valid:
+            new_mentoring_session = form.save()
+            new_mentoring_session.mentor = request.user.mentor
+            new_mentoring_session.save()
+            redirect('home')
+
+    else:
+        form = MentoringSessionForm()
+
+    return render(request, 'mentoring_session.html', {'form': form})
