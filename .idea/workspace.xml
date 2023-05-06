@@ -36,6 +36,7 @@
       <change afterPath="$PROJECT_DIR$/mentorships/templates/add_section.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mentorships/templates/mentor_content.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/mentorships/templates/mentoring_session.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/base/templates/base/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls.py" afterDir="false" />
