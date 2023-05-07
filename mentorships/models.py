@@ -10,15 +10,15 @@ class Mentor(models.Model):
         {id: '2', type: 'management'},
     ]
     user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
-    profile_photo = models.ImageField(upload_to='profile_photo/', null=True, blank=True)
+    # profile_photo = models.ImageField(upload_to='profile_photo/', null=True, blank=True)
     headline = models.CharField(max_length=200)
     about = models.TextField(blank=True)
-    expertise = models.CharField(max_length=500)
-    mentoring_style = models.TextField(blank=True)
-    language = models.CharField(max_length=100)
-    education = models.CharField(max_length=150)
-    work_experience = models.CharField(max_length=500)
-    mentor_type = models.CharField(max_length=100, choices=MENTOR_TYPE, null=True)
+    # expertise = models.CharField(max_length=500)
+    # mentoring_style = models.TextField(blank=True)
+    # language = models.CharField(max_length=100)
+    # education = models.CharField(max_length=150)
+    # work_experience = models.CharField(max_length=500)
+    # mentor_type = models.CharField(max_length=100, choices=MENTOR_TYPE, null=True)
 
     def __str__(self):
         return f"{self.profile_photo} -{self.headline}"
