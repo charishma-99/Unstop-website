@@ -1,0 +1,184 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} {{course.name }} | Unstop {% endblock  %}
+
+{% block style %}
+<style>
+    .jumbotron, .breadcrumb{
+        background-size: cover;
+        background: linear-gradient(rgba(0,0,250,0.25), rgba(125,250,250,0.25)),
+        url("{% static 'img/course_individual_bg.png' %} ");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white !important;
+
+    }
+    .about-body{
+        text-align: justify;
+    }
+    
+    .card {
+        border: 10px;
+    }
+    .inst{
+        border-radius: 20px;
+        color: black !important;
+    }
+
+    .instructor{
+        background-size: cover;
+        background: linear-gradient(rgba(201, 245, 255, 0.911), rgba(189, 250, 250, 0.849)),
+        url("{% static 'img/course_individual_bg.png' %} ");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white !important;
+        border: 60px;
+        border-radius: 30px;
+        padding: 50px 80px 50px 80px;
+
+    }
+</style>
+{% endblock style %}
+
+
+
+{% block main %}
+
+<div class="jumbotron jumbotron-fluid course-jumbo" >
+    <div class="container"> 
+    <div aria-label="breadcrumb" class"breadcrumb"> 
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'learn' %}">Courses</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{course.name}}</li>
+        </ol>
+    </div>
+    <h1>{{course.name}}</h1>
+   </div>
+</div>
+
+<div class="container row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">About</h6>
+                <p class="card-text about-body">{{course.about}}</p>
+            </div>
+        </div>
+        <p></p>
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Course Highlights</h6>
+                <p class="card-text about-body">{{course.course_highlight}}</p>
+            </div>
+        </div>
+        <br>
+        <div class="accordion" id="accordionExample">
+            <div class="container">
+                <h6 class="card-subtitle mb-2 text-muted">Course Content</h6> 
+            </div>
+            {% for section in  sections%}
+            <div class="card">
+                 
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    {{section.name}}
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                {% for content in course_content %}
+                <div class="card-body">
+                    <a href="" class="btn btn-link" >{{content.name}}</a>
+                    
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+        
+          </div>
+
+            
+          
+    
+        </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <video src="{{course.intro_video.url}} " class="card-img-top" type="video/mp4" controls
+            preload = "auto"></video>
+            <!-- <img src="{{course.course_cover.url}}" alt="" class="card-img-top"> -->
+            <div class="card-body">
+                <h6>Program Cost:            ₹{{course.price}}</h6>
+                <a href="" class="btn btn-warning btn-lg btn-block">Enroll Now</a>
+                
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">English</li>
+                    <li class="list-group-item">Mobile Friendly</li>
+                    <li class="list-group-item">Industry-recognized Certificate</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="jumbotron bg-dark">
+   <div class="row">
+    <div class="col">
+        <img src="{% static 'img/cert.png' %}" alt="">
+    </div>
+    <div class="col">
+        <h2>
+            Completion certification awarded on every course completion
+        </h2>
+        <p>Enrol for the courses curated by the best industry professionals & get Completion certification awarded on every course completion.</p>
+    </div>
+   </div>
+</div>
+
+<div class="card container">
+    <div class="card-body">
+        <h5 class="card-subtitle mb-2 text-muted">Career Growth Prospect</h5>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>After The Completion of This Course</h4>
+                <p class="card-text about-body">{{course.career_growth_prospect}}</p>
+
+            </div>
+            <div class="col-md-6">
+                <img src="https://cdn.unstop.com/uploads/images/unstop/course_icon/career_growth.png" alt="" width="300" height="200">
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+
+<div class="container jumbotron bg-dark instructor">
+
+         <h2 align="center"> Meet your Instructor</h2>
+        {% for instructor in  instructors%}
+         <div class="card inst">
+            <div class="card-body">
+                <img src="" alt="">
+                <p><strong>{{instructor.name}}</strong> </p>
+                <small>{{instructor.headline}}</small>
+
+                <p>{{instructor.about|truncatewords:20}}</p>
+               
+               
+            </div>
+        </div>
+        {% endfor %}
+ </div>
+ <br>
+
+
+{% endblock main %}
+
+

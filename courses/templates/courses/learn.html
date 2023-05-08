@@ -1,0 +1,203 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}
+Unstop Courses: Learn Anything, Anywhere From The Best
+{% endblock title %} 
+
+{% block main %}
+<section class="home-hero">
+    <div class="home-hero-container container">
+        <div class="home-hero-left">
+            <h1>
+                Unstop <strong> Classroom </strong>
+                <br />
+                
+            </h1>
+            <p>
+                Crack into your dream job with 80+ courses curated by globally acclaimed industry experts!
+            </p>
+       
+ 
+            <div class="row">
+            <div class="home-hero-image col">
+                <span>Self Paced</span>
+                <a href="">
+                    <img src="https://d8it4huxumps7.cloudfront.net/uploads/images/courses/self-paced-icon.png?d=425x314" />
+                </a>
+            </div>
+
+            <div class="home-hero-image col">
+                <span>Live Cohort</span>
+                <a href="">
+                    <img src="https://cdn.unstop.com/uploads/images/unstop/live-cohort-icon-new.png?d=425x314" />
+                </a>
+            </div>
+
+            <div class="home-hero-image col">
+                <span>Placement Programs</span>
+                <a href="">
+                    <img src="{% static 'img/placement-programs-image.png' %}" />
+                </a>
+            </div>
+        </div>
+
+
+        </div>
+        <div class="home-hero-right">
+            <div class="home-hero-right-images">
+                <img src="https://cdn.unstop.com/uploads/images/courses/unstop-classroom-banner-new.png?d=840x870" width="300"> </img
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slidingbrands">
+    <div class="slidingbrands-container">
+      <h2>
+        Industry veterans
+        <span>trust us:</span>
+      </h2>
+  
+    </div>
+  </section>
+
+
+
+<section class="common-cards card-cont">
+<div class="common-cards-container container">
+    <h2>What to Expect?</h2>
+    <div class="common-cards-content">
+    <p>Get placement ready with self-paced & live courses curated by top industry experts!</p>
+    </div>
+    <div class="common-cards-images">
+    
+        <div class="common-cards-image common" >
+            <div class="card" style="width: 15rem; height: 14rem;">
+            <img class="card-img-top" src="{% static 'img/mobile-first-content-icon.svg' %}" height="66" width="66" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Mobile-first Content</h5>
+                <p class="card-text">Learn on the go with mobile-friendly learning content.</p>
+                
+            </div>
+            </div>
+            
+        </div>
+        <div class="common-cards-image common" >
+            <div class="card" style="width: 15rem; height: 14rem;">
+            <img class="card-img-top" src="{% static 'img/hands-on-learning-icon-new.svg' %}" height="66"alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Hands-on learning</h5>
+                <p class="card-text">Work on capstone projects and assignments and build your proof-of-work.</p>
+                
+            </div>
+            </div>
+            
+        </div>
+        <div class="common-cards-image common" >
+            <div class="card" style="width: 15rem; height: 14rem;">
+            <img class="card-img-top" src="{% static 'img/industry-experts-icon.svg' %}" height="66"alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Industry Experts</h5>
+                <p class="card-text">Learn from the best industry professionals to fast-track your career growth</p>
+                
+            </div>
+            </div>
+            
+        </div>
+        <div class="common-cards-image common" >
+            <div class="card" style="width: 15rem; height: 14rem;">
+            <img class="card-img-top" src="{% static 'img/industry-recognized-icon.svg' %}" height="66"alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Industry-recognized Certification</h5>
+                <p class="card-text">Showcase your skills with an exclusive certificate from Unstop</p>
+                
+            </div>
+            </div>
+            
+        </div>
+
+        
+        
+
+
+            
+        
+        </div>
+</div>
+</section> 
+
+<section class="common-cards card-cont">
+    <div class="common-cards-container container">
+        <h2>Self Paced Courses</h2>
+        <div class="common-cards-content">
+        <p>Upskill yourself & be industry updated with these professional courses!</p>
+        </div>
+        
+        
+            <div class="lpm-container container" >
+              
+            <div class="row"> 
+              <div id="list-example" class="list-group col-md-3">
+                <a href="#list-item-1" class="list-group-item list-group-item-action" >Most Popular</a>
+                <a href="#list-item-2" class="list-group-item list-group-item-action">Business Management</a>
+                <a href="#list-item-3" class="list-group-item list-group-item-action">Data Science and Data Analytics</a>
+                <a href="#list-item-4" class="list-group-item list-group-item-action">Digital Marketing</a>
+                <a href="#list-item-5" class="list-group-item list-group-item-action">Placement Prep and Personal Development</a>              
+              </div>
+
+              <div class="scrollspy-example col-md-9" data-spy="scroll" data-target="#list-example" data-offset="0">
+                <h4 id="list-item-1">Most Popular</h4>
+                <div class="row"> 
+                    {% for course in self_paced %}
+                    
+                    <div class="card col" >
+                        <img src="{{course.course_cover.url}}" alt="" class="card-img-top">
+                        <div class="card-body"> 
+                            <a href="{% url 'course_detail' course.slug%}"> <h6 class="card-title">{{course.name}}</h6> </a>
+                            <small class="card-text">Duration of the course - {{course.duration}}</small><br>
+                            <small class="card-text">5+ Immersive Hands on Project</small><br>
+                            <small class="card-text">Unique Industry-Led Content</small><br>
+                            <small class="card-text">Industry Recognized Certificate</small><br>
+                            
+                        </div>
+                    </div>
+                    {% endfor %} 
+                    
+                </div>
+                
+                
+                 
+            </div>
+        
+            </div>
+    </div>
+    </section> 
+
+<section class="lpm">
+    <div class="lpm-container container">
+                <a href=""><img src="{% static 'img/live-cohorts.png' %}" width="1100" alt=""/></a>
+    </div>
+</section>
+
+<section class="common-cards card-cont">
+    <div class="common-cards-container container">
+        <h2>Placement Programs</h2>
+        <div class="common-cards-content">
+        <p>Get your placement secured with select top-level courses</p>
+        </div>
+        <div class="common-cards-images">
+        
+           
+            <div class="lpm-container container">
+                <a href=""><img src="{% static 'img/placement-coming-soon.png' %}" width="1100" alt=""/></a>
+            </div>
+      
+            </div>
+    </div>
+    </section> 
+
+
+{% endblock main %}
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> 
+        {% block title %}
+        Unstop
+        {% endblock title %} 
+    </title>
+    <link rel="shortcut icon" href="{% static 'img/unstop-logo.svg' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+
+    
+  </head>
+  <body>
+
+
+   
+
+      
+    <section >
+      <br>
+      <div class="row container ">
+  
+              <div class="col-md-6">
+                <img
+              src="	https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/svg/unstop-logo.svg"
+              alt="logo"
+            />
+                <br>
+                  <div class="home-hero-image">
+                      <span>learn</span>
+                      <a href="">
+                          <img src="https://cdn.unstop.com/uploads/images/home/home-hero-learn.png?d=324x406" />
+                      </a>
+                  </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <h3> Welcome back </h3>
+            {{form.errors}}
+            <form method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="username">
+               </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+              </div>
+             
+              <button type="submit" class="btn btn-primary">Login</button><br>
+              <span>Don't have an account? <a class="" href="{% url 'register' %}">Register</a></span>
+            </form>
+          </div>
+      </div>
+  </section>
+      
+    
+
+  </body>
+</html>
