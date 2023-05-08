@@ -4,15 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8e71bf8-e878-45fe-b841-7d2f00c6bb67" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c8e71bf8-e878-45fe-b841-7d2f00c6bb67" name="Changes" comment="changes in jobs/views.py">
+      <change afterPath="$PROJECT_DIR$/accounts/migrations/0007_remove_profile_profile_photo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/templates/base/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/templates/compete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/Activate.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/activate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/activate.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/deactivate.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/django-admin.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/easy_install-3.9.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/easy_install.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/pip.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/pip3.9.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/pip3.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/python.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/pythonw.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/Scripts/sqlformat.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/v/pyvenv.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compete/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobs/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobs/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mentorships/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mentorships/templates/add_section.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mentorships/templates/mentor_content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mentorships/templates/mentoring_session.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/base/templates/base/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobs/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobs/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mentorships/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mentorships/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mentorships/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mentorships/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,12 +70,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "init-models",
-    "last_opened_file_path": "C:/Users/Ankana/OneDrive/Desktop/workspace/Unstop-website"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging init-models&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ankana/OneDrive/Desktop/workspace/Unstop-website&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,6 +86,28 @@
       <option name="presentableId" value="Default" />
       <updated>1682675256418</updated>
     </task>
+    <task id="LOCAL-00001" summary="jobs/admin.py">
+      <created>1683306577019</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683306577020</updated>
+    </task>
+    <task id="LOCAL-00002" summary="changes in jobs/urls.py">
+      <created>1683307462961</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683307462961</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changes in jobs/views.py">
+      <created>1683307489151</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683307489151</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -47,10 +115,28 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="init-models" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="jobs/admin.py" />
+    <MESSAGE value="changes in jobs/urls.py" />
+    <MESSAGE value="changes in jobs/views.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in jobs/views.py" />
   </component>
 </project>

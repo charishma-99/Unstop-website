@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.contrib.auth import get_user_model
+User = get_user_model()
 # Create your models here.
 
 class Organization(models.Model):
@@ -19,6 +20,7 @@ class Job(models.Model):
         ('internship', 'Internship'),
         ('freelance', 'Freelance')
     ]
+    user = models.ForeignKey(User, related_name='User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name='jobs')
     description = models.TextField()
