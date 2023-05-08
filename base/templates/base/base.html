@@ -1,527 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+  {% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title> 
-        {% block title %}
-        Unstop
-        {% endblock title %} 
-    </title>
-    <link rel="shortcut icon" href="{% static 'img/unstop-logo.svg' %}" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <title>{% block title %} Unstop {% endblock title %}</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'img/unstop-logo.svg' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.min.css' %} "
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %} " />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
 
     {% block style %}{% endblock style %}
+  </head>
 
-   
-</head>
-
-<body>
-        
+  <body>
     <nav>
-        <div class="navbar container">
-            <div class="nav-left">
-                <div class="nav-img">
-                    <a href="{% url 'home' %}">
-                        <img src="{% static 'img/logo.png' %}" alt="logo" />
-                    </a>
-                    <span>Formerly<br /><strong>Dare2Compete</strong></span>
-                </div>
-                <div class="nav-search">
-                    <input type="text" placeholder="Search Opportunities" />
-                </div>
-            </div>
-            <div class="nav-right">
-                <div class="nav-tabs">
-                    <div class="learn-tab">
-                        <a href="{% url 'learn' %}">
-                            <span class="tab-icon"></span>
-                            <span class="tab-name">learn</span>
-                        </a>
-                    </div>
-                    <div class="practice-tab">
-                        <a href="{% url 'practice' %}">
-                            <span class="tab-icon"></span>
-                            <span class="tab-name">practice</span>
-                        </a>
-                    </div>
-                    <div class="compete-tab">
-                        <a href="{% url 'practice' %}">
-                            <span class="tab-icon"></span>
-                            <span class="tab-name">compete</span>
-                        </a>
-                    </div>
-                    <div class="mentorship-tab">
-                        <a href="">
-                            <span class="tab-icon"></span>
-                            <span class="tab-name">mentorship</span>
-                        </a>
-                    </div>
-                    <div class="jobs-tab">
-                        <a href="{% url 'job_portal' %}">
-                            <span class="tab-icon"></span>
-                            <span class="tab-name">jobs</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="nav-btns">
-                    <button class="btn host-btn">
-
-                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M6.87806 3.11794L6.87806 12.6856C6.87785 12.9825 6.77287 13.2697 6.58163 13.4968C6.39039 13.7238 6.12516 13.8761 5.83265 13.9268C5.54015 13.9775 5.23914 13.9233 4.98267 13.7738C4.72619 13.6243 4.5307 13.3891 4.43063 13.1096L2.89285 8.70468M2.89285 8.70468C2.28491 8.4462 1.78494 7.98633 1.47756 7.40159C1.17018 6.81685 1.07426 6.14387 1.20603 5.49653C1.33781 4.8492 1.68919 4.26727 2.2007 3.84923C2.71221 3.43119 3.35245 3.20271 4.01306 3.20246L5.32523 3.20246C8.26185 3.20246 10.7866 2.31861 11.8918 1.05371V11.0812C10.7866 9.8163 8.26257 8.93245 5.32523 8.93245H4.01306C3.62817 8.93301 3.24714 8.85507 2.89285 8.70468ZM11.8918 8.2162C12.4617 8.2162 13.0082 7.98982 13.4112 7.58685C13.8142 7.18388 14.0405 6.63734 14.0405 6.06745C14.0405 5.49757 13.8142 4.95103 13.4112 4.54806C13.0082 4.14509 12.4617 3.91871 11.8918 3.91871"
-                                stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path
-                                d="M11.9914 8.13297L11.8736 3.9374C12.6003 4.14523 14.0591 4.88152 14.0807 6.164C14.1023 7.44649 12.6968 8.01101 11.9914 8.13297Z"
-                                fill="white" />
-                        </svg>
-
-                        <span>Host</span>
-                      
-                    </button>
-                    {% if user.is_authenticated %}
-                    <a class="btn login-btn" href="{% url 'profile_page' user.profile.id%}">
-                        <span>Profile</span>
-                        <img src="{% static 'img/login_icon.svg' %} " alt="host btn" />
-                    </a>
-                    {% else %}
-                    <a class="btn login-btn" href="{% url 'login' %}">
-                      <span>Login</span>
-                      <img src="{% static 'img/login_icon.svg' %} " alt="host btn" />
-                  </a>
-                    {% endif %}
-                    <button class="menu-btn">
-                        <img src="{% static 'img/hamburger_icon.svg' %} " alt="menu" />
-                    </button>
-                </div>
-            </div>
+      <div class="navbar container">
+        <div class="nav-left">
+          <div class="nav-img">
+            <a href="{% url 'home' %}">
+              <img src="{% static 'img/logo.png' %}" alt="logo" />
+            </a>
+            <span>Formerly<br /><strong>Dare2Compete</strong></span>
+          </div>
+          <div class="nav-search">
+            <input type="text" placeholder="Search Opportunities" />
+          </div>
         </div>
+        <div class="nav-right">
+          <div class="nav-tabs">
+            <div class="learn-tab">
+              <a href="{% url 'learn' %}">
+                <span class="tab-icon"></span>
+                <span class="tab-name">learn</span>
+              </a>
+            </div>
+            <div class="practice-tab">
+              <a href="{% url 'practice' %}">
+                <span class="tab-icon"></span>
+                <span class="tab-name">practice</span>
+              </a>
+            </div>
+            <div class="compete-tab">
+              <a href="{% url 'compete' %}">
+                <span class="tab-icon"></span>
+                <span class="tab-name">compete</span>
+              </a>
+            </div>
+            <div class="mentorship-tab">
+              <a href="{% url 'mentorship' %}">
+                <span class="tab-icon"></span>
+                <span class="tab-name">mentorship</span>
+              </a>
+            </div>
+            <div class="jobs-tab">
+              <a href="{% url 'job_portal' %}">
+                <span class="tab-icon"></span>
+                <span class="tab-name">jobs</span>
+              </a>
+            </div>
+          </div>
+          <div class="nav-btns">
+            <button class="btn host-btn">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.87806 3.11794L6.87806 12.6856C6.87785 12.9825 6.77287 13.2697 6.58163 13.4968C6.39039 13.7238 6.12516 13.8761 5.83265 13.9268C5.54015 13.9775 5.23914 13.9233 4.98267 13.7738C4.72619 13.6243 4.5307 13.3891 4.43063 13.1096L2.89285 8.70468M2.89285 8.70468C2.28491 8.4462 1.78494 7.98633 1.47756 7.40159C1.17018 6.81685 1.07426 6.14387 1.20603 5.49653C1.33781 4.8492 1.68919 4.26727 2.2007 3.84923C2.71221 3.43119 3.35245 3.20271 4.01306 3.20246L5.32523 3.20246C8.26185 3.20246 10.7866 2.31861 11.8918 1.05371V11.0812C10.7866 9.8163 8.26257 8.93245 5.32523 8.93245H4.01306C3.62817 8.93301 3.24714 8.85507 2.89285 8.70468ZM11.8918 8.2162C12.4617 8.2162 13.0082 7.98982 13.4112 7.58685C13.8142 7.18388 14.0405 6.63734 14.0405 6.06745C14.0405 5.49757 13.8142 4.95103 13.4112 4.54806C13.0082 4.14509 12.4617 3.91871 11.8918 3.91871"
+                  stroke="white"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.9914 8.13297L11.8736 3.9374C12.6003 4.14523 14.0591 4.88152 14.0807 6.164C14.1023 7.44649 12.6968 8.01101 11.9914 8.13297Z"
+                  fill="white"
+                />
+              </svg>
+
+              <span>Host</span>
+            </button>
+            {% if user.is_authenticated %}
+            <a
+              class="btn login-btn"
+              href="{% url 'profile_page' user.profile.id%}"
+            >
+              <span>Profile</span>
+              <img src="{% static 'img/login_icon.svg' %} " alt="host btn" />
+            </a>
+            {% else %}
+            <a class="btn login-btn" href="{% url 'login' %}">
+              <span>Login</span>
+              <img src="{% static 'img/login_icon.svg' %} " alt="host btn" />
+            </a>
+            {% endif %}
+            <button class="menu-btn">
+              <img src="{% static 'img/hamburger_icon.svg' %} " alt="menu" />
+            </button>
+          </div>
+        </div>
+      </div>
     </nav>
 
-{% block main %}
+    {% block main %} {% endblock main %}
 
-{% endblock main %}
-
-<footer>
-    <div class="footer">
-      <div class="footer-top">
-        <div class="footer-top-left">
-          <div class="footer-logo">
+    <footer>
+      <div class="footer">
+        <div class="footer-top">
+          <div class="footer-top-left">
+            <div class="footer-logo">
+              <img
+                src="	https://d8it4huxumps7.cloudfront.net/uploads/images/63ee0282cefc5_unstop_logo.svg"
+                alt="logo"
+              />
+            </div>
+            <p class="dash">
+              Built with &hearts;
+              <span class="heart-icon">
+                <AiFillHeart />
+              </span>
+              in India for the world
+            </p>
+            <h3>Stay Connected</h3>
+            <div class="footer-contact-links">
+              <a
+                href="mailto:sales@unstop.com"
+                class="mail"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <IoMailOutline />
+                sales@unstop.com
+              </a>
+              <a href="tel:9311777388" class="mail">
+                <MdLocalPhone />
+                +91-9311777388 <span> (Mon to Fri, 9 AM to 6 PM)</span>
+              </a>
+            </div>
+            <div class="footer-social-links dash">
+              <a
+                href="https://www.instagram.com/unstop.world/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiFillInstagram />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/unstop"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedinIn />
+              </a>
+              <a
+                href="https://www.facebook.com/Unstop.world"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebookF />
+              </a>
+              <a
+                href="https://t.me/+ON15qceSy-IyZjY9"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaTelegramPlane />
+              </a>
+              <a
+                href="https://discord.com/invite/DvYWXNr4yR"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaDiscord />
+              </a>
+              <a
+                href="https://twitter.com/Unstop_World"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://www.youtube.com/c/Unstop_World"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaYoutube />
+              </a>
+            </div>
+            <h3>Stay Updated</h3>
+            <p class="updated">
+              We'll send you updates on the latest opportunities to showcase
+              your talent and get hired and rewarded regularly.
+            </p>
+            <div class="newsletter">
+              <a
+                href="https://unstop.com/about/newsletter"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Sign up for our newsletter
+                <IoMdSend />
+              </a>
+            </div>
+            <div class="footer-left-btns dash">
+              <a
+                href="https://unstop.com/blog/share-your-story-and-get-featured"
+                class="btn"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Share Your Story Now
+              </a>
+              <a
+                href="https://unstop.com/manage/opportunity/all/create"
+                class="btn"
+              >
+                <HiOutlineSpeakerphone />
+                Publish Opportunity
+              </a>
+            </div>
+            <h3>Download Unstop App</h3>
+            <div class="footer-download dash">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.dare2compete.app"
+                class="google-play"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/google-play.svg"
+                  alt="google play"
+                />
+              </a>
+              <a
+                href="https://apps.apple.com/in/app/dare2compete/id1601170365"
+                class="app-store"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/app-store.svg"
+                  alt="app store"
+                />
+              </a>
+            </div>
+            <p class="dash best-viewed">
+              Best Viewed in Latest Versions of Edge, Mozilla, Chrome, Opera &
+              Safari. V: 2.20.2023.18.53
+            </p>
+            <p class="copyright">
+              Copyright © 2023 FLIVE Consulting Pvt Ltd - All rights reserved.
+            </p>
+          </div>
+          <div class="footer-top-right">
+            <div class="footer-right-top">
+              <div class="footer-solution-product">
+                <div class="footer-solutions">
+                  <h4>Our solutions</h4>
+                  <div class="footer-solutions-links links-cont">
+                    <a href="" target="_blank" rel="noreferrer">Brand</a>
+                    <a href="" target="_blank" rel="noreferrer">Source</a>
+                    <a href="" target="_blank" rel="noreferrer">Engage</a>
+                    <a href="" target="_blank" rel="noreferrer">Access</a>
+                    <a href="" target="_blank" rel="noreferrer">Hire</a>
+                  </div>
+                </div>
+                <div class="footer-products">
+                  <h4>Our products</h4>
+                  <div class="footer-products-links links-cont">
+                    <a href="" target="_blank" rel="noreferrer">
+                      technology platform
+                    </a>
+                    <a href="" target="_blank" rel="noreferrer">
+                      online recruitment platform
+                    </a>
+                    <a href="" target="_blank" rel="noreferrer">
+                      quizzing / assessments
+                    </a>
+                    <a href="" target="_blank" rel="noreferrer">
+                      online hackathons / coding
+                    </a>
+                    <a href="" target="_blank" rel="noreferrer">
+                      business simulation games
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-participate-apply">
+                <div class="footer-participate">
+                  <h4>participate</h4>
+                  <div class="footer-participate-links links-cont">
+                    <a href="" target="_blank" rel="noreferrer">
+                      competitions & challenges</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer"> quizzes</a>
+                    <a href="" target="_blank" rel="noreferrer"> hackathons</a>
+                    <a href="" target="_blank" rel="noreferrer">
+                      workshops & webinars</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer"> conferences</a>
+                    <a href="" target="_blank" rel="noreferrer">
+                      cultural events</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer">
+                      college festivals</a
+                    >
+                  </div>
+                </div>
+                <div class="footer-apply">
+                  <h4>apply</h4>
+                  <div class="footer-apply-links links-cont">
+                    <a href="" target="_blank" rel="noreferrer"> internships</a>
+                    <a href="" target="_blank" rel="noreferrer"> jobs</a>
+                    <a href="" target="_blank" rel="noreferrer">
+                      scholarships</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="footer-learn-practice">
+                <div class="footer-learn">
+                  <h4>learn</h4>
+                  <div class="footer-learn-links links-cont">
+                    <a href="" target="_blank" rel="noreferrer"> courses</a>
+                    <a href="" target="_blank" rel="noreferrer"> articles</a>
+                    <a href="" target="_blank" rel="noreferrer"> workshops</a>
+                    <a href="" target="_blank" rel="noreferrer"> technopedia</a>
+                  </div>
+                </div>
+                <div class="footer-practice">
+                  <h4>practice</h4>
+                  <div class="footer-practice-links links-cont">
+                    <a href="" target="_blank" rel="noreferrer">
+                      MCQ mock tests</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer">
+                      Code & Ace Hiring assessments</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer">
+                      100-Day of Coding sprint</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-right-bottom">
+              <div class="footer-properties">
+                <div class="footer-products">
+                  <h4>our properties</h4>
+                  <div class="footer-products-links links-cont">
+                    <a href="" target="_blank" rel="noreferrer">
+                      Unstop Awards 2023</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer">
+                      Unstop Campus Employer Branding Report 2022</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer">
+                      Education Loan EMI Calculator</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer">
+                      Unstop Igniters Club</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer">
+                      Online Quizzing Festival</a
+                    >
+                    <a href="" target="_blank" rel="noreferrer">
+                      Online Hackathon Festival</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="footer-other-links">
+                <div class="same-row-links">
+                  <a href="https://unstop.com/about" class="divider">
+                    About Us
+                  </a>
+                  <a href="https://unstop.com/about/contact-us" class="divider">
+                    Contact Us
+                  </a>
+                  <a
+                    href="https://unstop.com/about/unstop-careers"
+                    class="footer-careers"
+                  >
+                    Careers
+                    <span class="hiring">We're hiring</span>
+                  </a>
+                </div>
+                <div class="same-row-links">
+                  <a href="https://unstop.com/about/clients" class="divider">
+                    Clientele
+                  </a>
+                  <a href="https://unstop.com/our-partners/become-a-partner">
+                    Partner With Us
+                  </a>
+                </div>
+                <div class="same-row-links">
+                  <a href="https://unstop.com/our-partners" class="divider">
+                    Partners
+                  </a>
+                  <a href="https://unstop.com/faq" class="divider"> FAQs </a>
+                  <a href="https://unstop.com/our-partners/branding-guidelines">
+                    Branding Guidelines
+                  </a>
+                </div>
+                <div class="same-row-links">
+                  <a
+                    href="https://unstop.com/about/testimonials"
+                    class="divider"
+                  >
+                    Testimonials
+                  </a>
+                  <a href="https://unstop.com/p/featured-partners-446568">
+                    Featured Partners
+                  </a>
+                </div>
+                <a href="https://unstop.com/unstop-rewards-program">
+                  Unstop Rewards Program
+                </a>
+                <a href="https://unstop.com/unstoppitchsharktank">
+                  Unstop on Shark Tank
+                </a>
+                <div class="same-row-links">
+                  <a
+                    href="https://unstop.com/legal/terms-of-use"
+                    class="divider"
+                  >
+                    Terms & Conditions
+                  </a>
+                  <a href="https://unstop.com/legal/privacy-policy">
+                    Privacy Policy
+                  </a>
+                </div>
+                <a href="https://unstop.com/directory/competitions/a/1">
+                  Sitemap
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom container">
+          <div class="footer-bottom-left">
             <img
-              src="	https://d8it4huxumps7.cloudfront.net/uploads/images/63ee0282cefc5_unstop_logo.svg"
-              alt="logo"
+              src="https://d8it4huxumps7.cloudfront.net/uploads/images/d2c-icons/d2c-payments-icon.svg"
+              alt="payments assurance"
+            />
+            <img
+              src="https://d8it4huxumps7.cloudfront.net/uploads/images/d2c-icons/payments-icon.svg"
+              alt="payment methods"
             />
           </div>
-          <p class="dash">
-            Built with 	&hearts;
-            <span class="heart-icon">
-              <AiFillHeart />
-            </span>
-            in India for the world
-          </p>
-          <h3>Stay Connected</h3>
-          <div class="footer-contact-links">
-            <a
-              href="mailto:sales@unstop.com"
-              class="mail"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IoMailOutline />
-              sales@unstop.com
-            </a>
-            <a
-              href="tel:9311777388"
-              class="mail"
-            >
-              <MdLocalPhone />
-              +91-9311777388 <span> (Mon to Fri, 9 AM to 6 PM)</span>
-            </a>
-          </div>
-          <div class="footer-social-links dash">
-            <a
-              href="https://www.instagram.com/unstop.world/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillInstagram />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/unstop"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              href="https://www.facebook.com/Unstop.world"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="https://t.me/+ON15qceSy-IyZjY9"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaTelegramPlane />
-            </a>
-            <a
-              href="https://discord.com/invite/DvYWXNr4yR"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaDiscord />
-            </a>
-            <a
-              href="https://twitter.com/Unstop_World"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="https://www.youtube.com/c/Unstop_World"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaYoutube />
-            </a>
-          </div>
-          <h3>Stay Updated</h3>
-          <p class="updated">
-            We'll send you updates on the latest opportunities to showcase
-            your talent and get hired and rewarded regularly.
-          </p>
-          <div class="newsletter">
-            <a
-              href="https://unstop.com/about/newsletter"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Sign up for our newsletter
-              <IoMdSend />
-            </a>
-          </div>
-          <div class="footer-left-btns dash">
-            <a
-              href="https://unstop.com/blog/share-your-story-and-get-featured"
-              class="btn"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Share Your Story Now
-            </a>
-            <a
-              href="https://unstop.com/manage/opportunity/all/create"
-              class="btn"
-            >
-              <HiOutlineSpeakerphone />
-              Publish Opportunity
-            </a>
-          </div>
-          <h3>Download Unstop App</h3>
-          <div class="footer-download dash">
-            <a
-              href="https://play.google.com/store/apps/details?id=com.dare2compete.app"
-              class="google-play"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/google-play.svg"
-                alt="google play"
-              />
-            </a>
-            <a
-              href="https://apps.apple.com/in/app/dare2compete/id1601170365"
-              class="app-store"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/app-store.svg"
-                alt="app store"
-              />
-            </a>
-          </div>
-          <p class="dash best-viewed">
-            Best Viewed in Latest Versions of Edge, Mozilla, Chrome, Opera &
-            Safari. V: 2.20.2023.18.53
-          </p>
-          <p class="copyright">
-            Copyright © 2023 FLIVE Consulting Pvt Ltd - All rights reserved.
-          </p>
-        </div>
-        <div class="footer-top-right">
-          <div class="footer-right-top">
-            <div class="footer-solution-product">
-              <div class="footer-solutions">
-                <h4>Our solutions</h4>
-                <div class="footer-solutions-links links-cont">     
-                      <a href="" target="_blank" rel="noreferrer">Brand</a> 
-                      <a href="" target="_blank" rel="noreferrer">Source</a>
-                      <a href="" target="_blank" rel="noreferrer">Engage</a>
-                      <a href="" target="_blank" rel="noreferrer">Access</a>
-                      <a href="" target="_blank" rel="noreferrer">Hire</a>
-                   
-                </div>
-              </div>
-              <div class="footer-products">
-                <h4>Our products</h4>
-                <div class="footer-products-links links-cont">
-                  
-                      <a href="" target="_blank" rel="noreferrer" >
-                      technology platform
-                      </a>
-                      <a href="" target="_blank" rel="noreferrer" >
-                        online recruitment platform
-                        </a>
-                    <a href="" target="_blank" rel="noreferrer" >
-                        quizzing / assessments
-                        </a>
-                    <a href="" target="_blank" rel="noreferrer" >
-                        online hackathons / coding
-                        </a>
-                    <a href="" target="_blank" rel="noreferrer" >
-                        business simulation games
-                        </a>
-             
-                    
-                </div>
-              </div>
-            </div>
-            <div class="footer-participate-apply">
-              <div class="footer-participate">
-                <h4>participate</h4>
-                <div class="footer-participate-links links-cont">
-                 
-                    <a href="" target="_blank" rel="noreferrer" > competitions & challenges</a>
-                    <a href="" target="_blank" rel="noreferrer" > quizzes</a>
-                    <a href="" target="_blank" rel="noreferrer" > hackathons</a>
-                    <a href="" target="_blank" rel="noreferrer" > workshops & webinars</a>
-                    <a href="" target="_blank" rel="noreferrer" > conferences</a>
-                    <a href="" target="_blank" rel="noreferrer" > cultural events</a>
-                    <a href="" target="_blank" rel="noreferrer" > college festivals</a>
-                   
-                </div>
-              </div>
-              <div class="footer-apply">
-                <h4>apply</h4>
-                <div class="footer-apply-links links-cont">
-                    <a href="" target="_blank" rel="noreferrer" > internships</a>
-                    <a href="" target="_blank" rel="noreferrer" > jobs</a>
-                    <a href="" target="_blank" rel="noreferrer" > scholarships</a>
-
-                </div>
-              </div>
-            </div>
-            <div class="footer-learn-practice">
-              <div class="footer-learn">
-                <h4>learn</h4>
-                <div class="footer-learn-links links-cont">
-                    <a href="" target="_blank" rel="noreferrer" > courses</a>
-                    <a href="" target="_blank" rel="noreferrer" > articles</a>
-                    <a href="" target="_blank" rel="noreferrer" > workshops</a>
-                    <a href="" target="_blank" rel="noreferrer" > technopedia</a>
-
-                </div>
-              </div>
-              <div class="footer-practice">
-                <h4>practice</h4>
-                <div class="footer-practice-links links-cont">
-                    <a href="" target="_blank" rel="noreferrer" > MCQ mock tests</a>
-                    <a href="" target="_blank" rel="noreferrer" > Code & Ace Hiring assessments</a>
-                    <a href="" target="_blank" rel="noreferrer" > 100-Day of Coding sprint</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="footer-right-bottom">
-            <div class="footer-properties">
-              <div class="footer-products">
-                <h4>our properties</h4>
-                <div class="footer-products-links links-cont">
-                    <a href="" target="_blank" rel="noreferrer" > Unstop Awards 2023</a>
-                    <a href="" target="_blank" rel="noreferrer" > Unstop Campus Employer Branding Report 2022</a>
-                    <a href="" target="_blank" rel="noreferrer" > Education Loan EMI Calculator</a>
-                    <a href="" target="_blank" rel="noreferrer" > Unstop Igniters Club</a>
-                    <a href="" target="_blank" rel="noreferrer" > Online Quizzing Festival</a>
-                    <a href="" target="_blank" rel="noreferrer" > Online Hackathon Festival</a>
-                </div>
-              </div>
-            </div>
-            <div class="footer-other-links">
-              <div class="same-row-links">
-                <a
-                  href="https://unstop.com/about"
-                  class="divider"
-                >
-                  About Us
-                </a>
-                <a
-                  href="https://unstop.com/about/contact-us"
-                  class="divider"
-                >
-                  Contact Us
-                </a>
-                <a
-                  href="https://unstop.com/about/unstop-careers"
-                  class="footer-careers"
-                >
-                  Careers
-                  <span class="hiring">We're hiring</span>
-                </a>
-              </div>
-              <div class="same-row-links">
-                <a
-                  href="https://unstop.com/about/clients"
-                  class="divider"
-                >
-                  Clientele
-                </a>
-                <a href="https://unstop.com/our-partners/become-a-partner">
-                  Partner With Us
-                </a>
-              </div>
-              <div class="same-row-links">
-                <a
-                  href="https://unstop.com/our-partners"
-                  class="divider"
-                >
-                  Partners
-                </a>
-                <a
-                  href="https://unstop.com/faq"
-                  class="divider"
-                >
-                  FAQs
-                </a>
-                <a href="https://unstop.com/our-partners/branding-guidelines">
-                  Branding Guidelines
-                </a>
-              </div>
-              <div class="same-row-links">
-                <a
-                  href="https://unstop.com/about/testimonials"
-                  class="divider"
-                >
-                  Testimonials
-                </a>
-                <a href="https://unstop.com/p/featured-partners-446568">
-                  Featured Partners
-                </a>
-              </div>
-              <a href="https://unstop.com/unstop-rewards-program">
-                Unstop Rewards Program
-              </a>
-              <a href="https://unstop.com/unstoppitchsharktank">
-                Unstop on Shark Tank
-              </a>
-              <div class="same-row-links">
-                <a
-                  href="https://unstop.com/legal/terms-of-use"
-                  class="divider"
-                >
-                  Terms & Conditions
-                </a>
-                <a href="https://unstop.com/legal/privacy-policy">
-                  Privacy Policy
-                </a>
-              </div>
-              <a href="https://unstop.com/directory/competitions/a/1">
-                Sitemap
-              </a>
-            </div>
+          <div class="footer-bottom-right">
+            <img
+              src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/gdpr-logo.png?d=300x300"
+              alt="data protection"
+            />
+            <img
+              src="https://d8it4huxumps7.cloudfront.net/uploads/images/6231c2a5bdf94_iso_27001.svg"
+              alt="information security"
+            />
+            <img
+              src="https://d8it4huxumps7.cloudfront.net/uploads/images/6231c2c0b51ff_iso_9001.svg"
+              alt="iso certified"
+            />
           </div>
         </div>
       </div>
-      <div class="footer-bottom container">
-        <div class="footer-bottom-left">
-          <img
-            src="https://d8it4huxumps7.cloudfront.net/uploads/images/d2c-icons/d2c-payments-icon.svg"
-            alt="payments assurance"
-          />
-          <img
-            src="https://d8it4huxumps7.cloudfront.net/uploads/images/d2c-icons/payments-icon.svg"
-            alt="payment methods"
-          />
+    </footer>
+
+    <div class="mobile-nav">
+      <div class="mobile-nav-tabs">
+        <div class="learn-tab">
+          <a href="">
+            <span class="tab-icon"></span>
+            <span class="tab-name">learn</span>
+          </a>
         </div>
-        <div class="footer-bottom-right">
-          <img
-            src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/gdpr-logo.png?d=300x300"
-            alt="data protection"
-          />
-          <img
-            src="https://d8it4huxumps7.cloudfront.net/uploads/images/6231c2a5bdf94_iso_27001.svg"
-            alt="information security"
-          />
-          <img
-            src="https://d8it4huxumps7.cloudfront.net/uploads/images/6231c2c0b51ff_iso_9001.svg"
-            alt="iso certified"
-          />
+        <div class="practice-tab">
+          <a href="">
+            <span class="tab-icon"></span>
+            <span class="tab-name">practice</span>
+          </a>
+        </div>
+        <div class="compete-tab">
+          <a href="">
+            <span class="tab-icon"></span>
+            <span class="tab-name">compete</span>
+          </a>
+        </div>
+        <div class="mentorship-tab">
+          <a href="">
+            <span class="tab-icon"></span>
+            <span class="tab-name">mentorship</span>
+          </a>
+        </div>
+        <div class="jobs-tab">
+          <a href="">
+            <span class="tab-icon"></span>
+            <span class="tab-name">jobs</span>
+          </a>
         </div>
       </div>
     </div>
-  </footer>
 
-  <div class="mobile-nav">
-    <div class="mobile-nav-tabs">
-      <div class="learn-tab">
-        <a href="">
-          <span class="tab-icon"></span>
-          <span class="tab-name">learn</span>
-      </a>
-      </div>
-      <div class="practice-tab">
-        <a href="">
-          <span class="tab-icon"></span>
-          <span class="tab-name">practice</span>
-        </a>
-      </div>
-      <div class="compete-tab">
-        <a href="">
-          <span class="tab-icon"></span>
-          <span class="tab-name">compete</span>
-        </a>
-      </div>
-      <div class="mentorship-tab">
-        <a href="">
-          <span class="tab-icon"></span>
-          <span class="tab-name">mentorship</span>
-        </a>
-      </div>
-      <div class="jobs-tab">
-        <a href="">
-          <span class="tab-icon"></span>
-          <span class="tab-name">jobs</span>
-        </a>
-      </div>
-    </div>
-  </div>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %} "></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-
-<script src="{% static 'js/jquery-3.2.1.min.js' %} "></script>
-<script src="{% static 'js/popper.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-<script >
-//  Initialize Swiper
-let swiper = new Swiper(".mySwiper", {
-pagination: {
- el: ".swiper-pagination",
-},
-});
-</script>
-</body>
-
+    <script>
+      //  Initialize Swiper
+      let swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+  </body>
 </html>
