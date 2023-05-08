@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Mentor
+from .models import Mentor, MentoringSession, MentorContent, Section
 from .forms import SectionForm, MentorContentForm, MentoringSessionForm
 from accounts.views import ShowProfile
 
@@ -61,6 +61,7 @@ def add_mentor_content(request):
     return render(request, 'mentor_content.html', {'form': form})
 
 def add_mentoring_session(request):
+    new_mentoring_session = None
     if request.method == 'POST':
         form = MentoringSessionForm()
         if form.is_valid:
@@ -73,3 +74,4 @@ def add_mentoring_session(request):
         form = MentoringSessionForm()
 
     return render(request, 'mentoring_session.html', {'form': form})
+
