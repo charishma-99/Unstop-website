@@ -2,6 +2,7 @@ from django.db import models
 from accounts.models import UserProfile
 
 # Create your models here.
+
 class Mentor(models.Model):
     MENTOR_TYPE = [
         # ('technology', 'Technology'),
@@ -19,6 +20,7 @@ class Mentor(models.Model):
     education = models.CharField(max_length=150)
     work_experience = models.CharField(max_length=500)
     mentor_type = models.CharField(max_length=100, choices=MENTOR_TYPE, null=True)
+    
 
     def __str__(self):
         return f"{self.profile_photo} -{self.headline}"
@@ -44,6 +46,7 @@ class MentoringSession(models.Model):
     def __str__(self):
         return f"{self.mentor} - {self.price} - {self.date}"
 
+
 class MentorContent(models.Model):
     mentor = models.ForeignKey(Mentor, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=250)
@@ -59,9 +62,6 @@ class Section(models.Model):
     mentor = models.ManyToManyField(Mentor)
     name = models.CharField(max_length=150)
     mentor_content = models.ManyToManyField(MentorContent, related_name="mentorcontent")
-
         
-
-
 
 
