@@ -15,4 +15,4 @@ def compete(request):
 def job(request):
     return render(request,'jobs/job-main.html')
 def mentors(request):
-    return render(request,'mentorships/home.html')
+    return render(request,'mentorships/mentors.html')
