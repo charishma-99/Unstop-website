@@ -6,7 +6,10 @@ from accounts.views import ShowProfile
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
-
+def beamentor(request):
+    return render(request, 'add_section.html')
+def form(request):
+    return render(request, 'form.html')
 def mentors(request):
     mentors = Mentor.objects.all()
     id = request.GET.get('id')
