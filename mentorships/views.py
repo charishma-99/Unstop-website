@@ -5,7 +5,13 @@ from accounts.views import ShowProfile
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'mentorships/home.html')
+
+def beamentor(request):
+    return render(request, 'mentorships/add_section.html')
+
+def form(request):
+    return render(request, 'mentorships/form.html')
 
 def mentors(request):
     mentors = Mentor.objects.all()
@@ -27,7 +33,7 @@ def mentors(request):
         # 'management_mentors': management_mentors,
 
     }
-    return render(request, 'mentors.html', context)
+    return render(request, 'mentorships/mentors.html', context)
 
 def add_section(request):
     
@@ -43,7 +49,7 @@ def add_section(request):
     else:
         form = SectionForm()
    
-    return render(request, 'add_section.html', {"form": form})
+    return render(request, 'mentorships/add_section.html', {"form": form})
 
 def add_mentor_content(request):
     new_mentor_content = None
@@ -58,7 +64,7 @@ def add_mentor_content(request):
     else:
         form = MentorContentForm()
 
-    return render(request, 'mentor_content.html', {'form': form})
+    return render(request, 'mentorships/mentor_content.html', {'form': form})
 
 def add_mentoring_session(request):
     new_mentoring_session = None
@@ -73,5 +79,5 @@ def add_mentoring_session(request):
     else:
         form = MentoringSessionForm()
 
-    return render(request, 'mentoring_session.html', {'form': form})
+    return render(request, 'mentorships/mentoring_session.html', {'form': form})
 
