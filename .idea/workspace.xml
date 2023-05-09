@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8e71bf8-e878-45fe-b841-7d2f00c6bb67" name="Changes" comment="changes in jobs/views.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobs/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unstop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/unstop/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="c8e71bf8-e878-45fe-b841-7d2f00c6bb67" name="Changes" comment="changes in jobs/views.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +36,11 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Ankana/OneDrive/Desktop/workspace/Unstop-website&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ankana\OneDrive\Desktop\workspace\Unstop-website\jobs\templates\jobs" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
