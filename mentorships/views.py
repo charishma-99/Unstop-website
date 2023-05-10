@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Mentor, MentoringSession, MentorContent, Section
-from .forms import SectionForm, MentorContentForm, MentoringSessionForm
+from .forms import SectionForm, MentorContentForm, MentoringSessionForm, MentorForm
 from accounts.views import ShowProfile
 
 # Create your views here.
@@ -8,7 +8,18 @@ def home(request):
     return render(request, 'mentorships/home.html')
 
 def beamentor(request):
-    return render(request, 'mentorships/add_section.html')
+    if request.method == 'POST':
+        form = MentorForm
+        if form.is_valid():
+            mentor = form.save(commit=False)
+            mentor.user = request.user
+            mentor.save()
+            return redirect('home')
+    else:
+        form = MentorForm()
+
+    return render(request, 'mentorships/add_section.html', {'form': form})
+
 
 def form(request):
     return render(request, 'mentorships/form.html')
