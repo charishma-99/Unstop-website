@@ -11,7 +11,7 @@ class Mentor(models.Model):
         {id: '2', type: 'management'},
     ]
     user = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
-    # profile_photo = models.ImageField(upload_to='profile_photo/', null=True, blank=True)
+    profile_photo = models.ImageField(upload_to='profile_photo/', null=True, blank=True)
     headline = models.CharField(max_length=200)
     about = models.TextField(blank=True)
     # expertise = models.CharField(max_length=500)

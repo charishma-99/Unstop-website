@@ -10,7 +10,7 @@ class SectionForm(forms.ModelForm):
 class MentorForm(forms.ModelForm):
     class Meta:
         model = Mentor
-        fields = ('user', 'headline', 'about')
+        fields = ('user', 'profile_photo', 'headline', 'about')
 
 class MentorContentForm(forms.ModelForm):
     class Meta:

@@ -5,4 +5,31 @@ Find A Mentor: Gain Insights From Experts & Reach Your Goals
 {% endblock title %}
 {% block main %}
 FORM STARTED
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6" style="margin: 0 auto;">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="user">User Name</label>
+                    <input type="text" id="user" name="user" class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="headline">Headline</label>
+                    <textarea name="headline" id="headline" class="form-control" cols="3" rows="3"></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="headline">About</label>
+                    <textarea name="about" id="about" class="form-control" cols="3" rows="3"></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="margin: 0 auto; display: block;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock main %}
